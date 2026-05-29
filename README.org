@@ -11,6 +11,13 @@ code generation. But here, in this repo, it is all done by man.
 
 These are supposed to be fundamentals of C++ development that are worth committing to memory.
 
+Focus on fundamentals here.
+
+* WINDOWS (note)
+This will require use of WSL or git bash on windows, (which I do already)
+So not messing with that here or other compilers until later.
 * DRILLS
 
 ** 01_HELLO_WORLD
+- running `make` results in /BUILD/hello_world_build to be created
+- run `./BUILD/hello_world_build` and notice `hello world` written to cli
