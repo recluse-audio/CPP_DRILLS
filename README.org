@@ -1,0 +1,16 @@
+#+TITLE: README
+#+AUTHOR: Ryan Devens
+
+* Meta
+This repo is not to be modified in anyway by AI tools or automated code generation.
+
+* ABSTRACT
+I am putting these together as exercises for myself and others if they so choose.
+This repo may be influenced by things I learn using LLMs, and in many other places I will allow carefully reviewed
+code generation. But here, in this repo, it is all done by man.
+
+These are supposed to be fundamentals of C++ development that are worth committing to memory.
+
+* DRILLS
+
+** 01_HELLO_WORLD
