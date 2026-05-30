@@ -1,4 +1,4 @@
-CXX := g++
+xXX := g++
 CXXFLAGS := -std=c++17 -Wall -Wextra
 
 build:
@@ -7,7 +7,7 @@ build:
 
 test:
 	mkdir -p TESTS
-	$(CXX) $(CXXFLAGS) -o TESTS/input_and_logic_tests_build TESTS/test_main.cpp SOURCE/Logic.cpp
+	$(CXX) $(CXXFLAGS) -o TESTS/input_and_logic_tests_build TESTS/test_main.cpp SOURCE/main.cpp SOURCE/Logic.cpp
 	./TESTS/input_and_logic_tests_build
 
 clean:
