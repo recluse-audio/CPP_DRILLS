@@ -11,4 +11,4 @@ test:
 	./TESTS/hello_world_tests_build
 
 clean:
-	rm -f BUILD/hello_world_buld TESTS/hello_world_tests_build
+	rm -f BUILD/hello_world_build TESTS/hello_world_tests_build
