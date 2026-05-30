@@ -21,6 +21,13 @@ void test_is_prime()
 
 void test_to_binary()
 {
+    assert(to_binary(5) == "101");
+    assert(to_binary(0) == "0");
+    assert(to_binary(1) == "1");
+    assert(to_binary(2) == "10");
+    assert(to_binary(3) == "11");
+    assert(to_binary(255) == "11111111");
+    assert(to_binary(254) == "11111110");
 
 }
 

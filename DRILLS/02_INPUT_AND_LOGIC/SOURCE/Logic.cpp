@@ -29,12 +29,19 @@ bool is_prime(int n)
 
 std::string to_binary(unsigned int n)
 {
+    // 0 returns literally "0"
     if(n==0)
         return "0";
+
     std::string result;
     while(n > 0)
     {
-        result = (char)('0' + (n % 2)) + result;
+        // if modulo around 2 is 0, it is even number at this digit at needs a 1
+        char bit = (n % 2 == 0) ? '0' : '1';
+        // needs to be 'bit + result' for correct ordering
+        // A -> BA -> CBA -> DCBA
+        result = bit + result;
+        // divide by two, shift digits to right
         n /= 2;
     }
     return result;
