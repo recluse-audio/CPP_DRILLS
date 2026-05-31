@@ -23,7 +23,7 @@ std::string reverse(const std::string& string)
 // Remove leading and trailing whitespace
 std::string trim(const std::string& string)
 // Break on given character 'delim', separate string into vector of smaller strings
-std::string vector<std::string> split(const std::string& string, char delim)
+std::vector<std::string> split(const std::string& string, char delim)
 // Concatenate two strings with a seperator
 std::string join(const std::vector<std::string>& parts, const std::string& sep);
 // sum of all ints in vector

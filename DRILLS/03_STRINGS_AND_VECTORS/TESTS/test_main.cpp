@@ -13,12 +13,23 @@ void test_trim()
     assert(trim("  ABC  ") == "ABC");
 }
 
+void test_split()
+{
+    std::string testString = "ABC,123,DEF";
+    std::vector<std::string> stringVec = split(testString, ',');
+    std::cout << "stringVec[0]: " << stringVec[0] << "\n";
+    std::cout << "stringVec[1]: " << stringVec[1] << "\n";
+    std::cout << "stringVec[2]: " << stringVec[2] << "\n";
+    assert(stringVec[0] == "ABC");
+    assert(stringVec[1] == "123");
+    assert(stringVec[2] == "DEF");
+}
 
 int main()
 {
     test_reverseString();
     test_trim();
-    // test_split();
+    test_split();
     // test_join();
     // test_sum();
     // test_in_place_double();

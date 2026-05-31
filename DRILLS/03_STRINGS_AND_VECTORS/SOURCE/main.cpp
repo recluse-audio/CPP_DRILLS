@@ -13,10 +13,20 @@ int main(int argc, char* argv [])
     // ORIGINAL
     std::string originalString(argv[1]); // use this later to print original
     std::cout << "original string " << originalString << "\n";
-    std::string reversedString = reverseString(originalString);
-    std::cout << "reversed string " << reversedString << "\n";
+
+    // Remove whitespace
     std::string trimmedString = trim(originalString);
     std::cout << "trimmed string: " << trimmedString << "\n";
+
+    std::vector<std::string> splitVector = split(originalString);
+    std::cout << "num strings after split: " << splitVector.size();
+
+
+
+    // Just for fun
+    //
+    std::string reversedString = reverseString(originalString);
+    std::cout << "reversed string " << reversedString << "\n";
 
     return 0;
 
