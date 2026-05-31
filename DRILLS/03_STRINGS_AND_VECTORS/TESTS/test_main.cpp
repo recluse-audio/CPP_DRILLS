@@ -40,8 +40,6 @@ int main()
     test_trim();
     test_split();
     test_join();
-    // test_sum();
-    // test_in_place_double();
     std::cout << "All Tests PASSED!!!";
     return 0;
 }

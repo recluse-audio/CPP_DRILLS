@@ -26,7 +26,6 @@ int main(int argc, char* argv [])
     std::string concatString = join(splitVector, newSeparatorChar);
     std::cout << "New string after concatenation: " << concatString << " \n";
 
-
     // Just for fun
     //
     std::string reversedString = reverseString(originalString);
