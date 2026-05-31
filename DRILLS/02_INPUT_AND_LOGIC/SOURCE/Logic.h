@@ -1,4 +1,3 @@
-#pragma once
 #include <string>
 
 // Determine in 'n' is positive/negative/zero

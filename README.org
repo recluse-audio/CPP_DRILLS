@@ -13,6 +13,13 @@ These are supposed to be fundamentals of C++ development that are worth committi
 
 Focus on fundamentals here.
 
+* BUILDING
+Keeping build strategy the same as much as possible.
+
+** Builds done with Makefile and `g++` compiler
+- generic / readily available
+- justifiable tool to depend on.
+
 * WINDOWS (note)
 This will require use of WSL or git bash on windows, (which I do already)
 So not messing with that here or other compilers until later.
@@ -21,3 +28,11 @@ So not messing with that here or other compilers until later.
 ** 01_HELLO_WORLD
 - running `make` results in /BUILD/hello_world_build to be created
 - run `./BUILD/hello_world_build` and notice `hello world` written to cli
+
+** 02_INPUT_AND_LOGIC
+- Basic user input using keyboard
+- check if prime
+- convert to binary
+
+** 03_STRINGS_AND_VECTORS
+[[file:DRILLS/03_STRINGS_AND_VECTORS/README.org][README_03_STRINGS_AND_VECTORS]]

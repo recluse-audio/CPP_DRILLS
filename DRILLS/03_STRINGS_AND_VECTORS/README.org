@@ -1,0 +1,7 @@
+#+TITLE: README
+#+AUTHOR: Ryan Devens
+
+This is README for exercise 3.
+
+* Reverse an Input String
+Write a "free" function (outside of a class) that reverses an input string.
