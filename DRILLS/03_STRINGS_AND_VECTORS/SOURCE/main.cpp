@@ -1,5 +1,5 @@
 #include <iostream>
-#include "StringReverse.h"
+#include "StringModifier.h"
 
 int main(int argc, char* argv [])
 {
@@ -10,11 +10,13 @@ int main(int argc, char* argv [])
         return 1;
     }
 
+    // ORIGINAL
     std::string originalString(argv[1]); // use this later to print original
-    std::string reversedString = reverseString(originalString);
-
     std::cout << "original string " << originalString << "\n";
+    std::string reversedString = reverseString(originalString);
     std::cout << "reversed string " << reversedString << "\n";
+    std::string trimmedString = trim(originalString);
+    std::cout << "trimmed string: " << trimmedString << "\n";
 
     return 0;
 
