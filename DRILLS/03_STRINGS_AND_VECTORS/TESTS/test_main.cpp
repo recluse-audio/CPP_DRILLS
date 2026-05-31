@@ -25,12 +25,21 @@ void test_split()
     assert(stringVec[2] == "DEF");
 }
 
+void test_join()
+{
+    std::string testString = "ABC,123,DEF";
+    const std::vector<std::string> stringVec = split(testString, ',');
+    std::string joinedString = join(stringVec, 'z');
+    std::cout << "joined string: " << joinedString << " \n";
+    assert(joinedString == "ABCz123zDEF");
+}
+
 int main()
 {
     test_reverseString();
     test_trim();
     test_split();
-    // test_join();
+    test_join();
     // test_sum();
     // test_in_place_double();
     std::cout << "All Tests PASSED!!!";

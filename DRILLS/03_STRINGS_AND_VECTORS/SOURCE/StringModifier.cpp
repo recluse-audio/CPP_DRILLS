@@ -76,3 +76,24 @@ std::vector<std::string> split(const std::string& inputString, char separator)
 
     return stringVec;
 }
+
+std::string join(const std::vector<std::string>& stringVec, char newSeparatorChar)
+{
+    int numStrings = (int)stringVec.size();
+
+    std::string finalString = "";
+
+    for(int i = 0; i <= numStrings - 1; ++i)
+    {
+        std::string activeString = stringVec[i];
+
+        // detect NOT final, add space and appropriate separator char from arg above
+        if(i != numStrings - 1)
+        {
+            activeString = activeString + newSeparatorChar;
+        }
+
+        finalString = finalString + activeString;
+    }
+    return finalString;
+}
