@@ -6,8 +6,8 @@ build:
 	$(CXX) $(CXXFLAGS) -o BUILD/build SOURCE/main.cpp SOURCE/StringReverse.cpp
 
 test:
-	mkdir -P TESTS
-	$(CXX) $(CXXFLAGS) -o TESTS/test_build TESTS/test_main.cpp SOURCE/StringReverse.h
+	mkdir -p TESTS
+	$(CXX) $(CXXFLAGS) -o TESTS/test_build TESTS/test_main.cpp SOURCE/StringReverse.cpp
 	./TESTS/test_build
 
 clean:
