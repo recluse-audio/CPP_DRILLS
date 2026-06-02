@@ -6,9 +6,10 @@ build:
 	$(CXX) $(CXXFLAGS) -o BUILD/build SOURCE/main.cpp SOURCE/StringModifier.cpp
 
 test:
+	mkdir -p BUILD
 	mkdir -p TESTS
-	$(CXX) $(CXXFLAGS) -o TESTS/test_build TESTS/test_main.cpp SOURCE/StringModifier.cpp
-	./TESTS/test_build
+	$(CXX) $(CXXFLAGS) -o BUILD/test_build TESTS/test_main.cpp SOURCE/StringModifier.cpp
+	./BUILD/test_build
 
 clean:
-	rm -f BUILD/build TESTS/test_build
+	rm -f BUILD/build BUILD/test_build
