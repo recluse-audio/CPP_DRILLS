@@ -14,11 +14,27 @@ void test_swap_by_ref()
 void test_swap_by_ptr()
 {
 
+    int a = 5;
+    int b = 6;
+    swap_by_ptr(&a, &b);
+    assert(a == 6);
+    assert(b == 5);
 }
 
 void test_find()
 {
+    // create array of int values we will search
+    int arr[5] = {10, 20, 30, 40, 50};
+    int* result = find(arr, arr + 5, 30);
+    assert(result != nullptr); // we found something
+    assert(*result == 30); // value at result address is 30
+    assert(result - arr == 2); // pointer subtraction aka index calculation [2]-0
+    //
+    // Test Value not in range
+    int* expectedFail = find(arr, arr + 5, 60);
+    assert(expectedFail == nullptr);
 
+    // TODO: Could use some more test cases
 }
 
 void test_c_strlen()

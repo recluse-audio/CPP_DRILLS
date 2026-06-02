@@ -11,7 +11,10 @@ void swap_by_ref(int& a, int& b);
 // 2) same as above but with ptr
 void swap_by_ptr(int* a, int* b);
 
-// 3)
+// 3) begin/end int* addresses of elements, not indices
+// for ranges like 3-5 in an array intArray you'd say:
+// `begin = intArray+3; `
+// eng = intArray=5`
 int* find(int* begin, int* end, int target);
 
 // 4)
