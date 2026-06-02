@@ -1,0 +1,21 @@
+#+TITLE: README
+#+AUTHOR: Ryan Devens
+#+FOCUS: Raw pointers, references, C arrays vs. std::array
+
+* SCENARIO
+You are maintaining a legacy C audio-buffer routine that
+takes `(int* samples, size_t n)` and you have to interop with it from
+modern C++. No `std::vector` allowed at the boundary. You need to
+search, reverse, and measure these raw buffers safely.
+
+
+API ideas (`Mem.h`):
+- `void swap_by_ref(int& a, int& b);`
+- `void swap_by_ptr(int* a, int* b);`
+- `int* find(int* begin, int* end, int target);` // returns nullptr if missing
+- `std::size_t c_strlen(const char* s);`
+- `void reverse_in_place(int* arr, std::size_t n);`
+
+Tests should include `nullptr` handling and the empty-range case.
+Talking points: pointer == address, reference == alias, decay of arrays
+to pointers, why `end` is one-past-the-last.
