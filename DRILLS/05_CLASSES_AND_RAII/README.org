@@ -1,0 +1,29 @@
+#+TITLE: README
+#+AUTHOR: Ryan Devens
+#+FOCUS: ctor/dtor, member init lists, const methods, this, RAII
+#+SOURCE: GeeksforGeeks: Destructor for Dynamic Array in C++
+#+SOURCE_URL: https://www.geeksforgeeks.org/cpp/destructor-for-dynamic-array-in-cpp/
+#+SOURCE_ARCHIVE: <web.archive.org permalink, to capture>
+
+[[file:../../README.org][BACK TO MAIN README]]
+
+* PROBLEM
+Write a class that owns a heap-allocated int array.
+Allocate the buffer in the constructor (given a size),
+and release it in the destructor.
+
+This is soo the memory is freed automatically
+when the object goes out of scope following the RAII pattern.
+This should support storing a value at an index (bounds-checked)
+and inspecting the contents.
+
+(Modified from link below)
+-- GeeksforGeeks, https://www.geeksforgeeks.org/cpp/destructor-for-dynamic-array-in-cpp/
+
+* REQUIRED FUNCTIONS
+   DynamicArray(int size);      // new int[size]
+   ~DynamicArray();             // delete[]
+   void addElement(int index, int value);   // bounds-checked
+   void printArray();
+   int getElement(int index) const;
+   int getSize() const;
