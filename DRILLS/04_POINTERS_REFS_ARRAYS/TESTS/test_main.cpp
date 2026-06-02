@@ -39,7 +39,9 @@ void test_find()
 
 void test_c_strlen()
 {
-
+    const char* charString = "test_charString";
+    int numChars = c_strlen(charString);
+    assert(numChars == 15);
 }
 
 void test_reverse_in_place()

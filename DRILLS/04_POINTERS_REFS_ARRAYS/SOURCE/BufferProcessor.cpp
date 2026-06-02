@@ -37,10 +37,23 @@ int* find(int* begin, int* end, int target)
 }
 
 
-std::size_t c_strlen(const char* s)
+std::size_t c_strlen(const char* charString)
 {
-    std::size_t n = 0;
-    return n;
+    std::size_t charCount = 0;
+
+    bool isFinished = false;
+    while(!isFinished)
+    {
+        char currentChar = charString[charCount];
+        if(currentChar == '\0')
+        {
+            isFinished = true;
+            break;
+        }
+        charCount++;
+    }
+
+    return charCount;
 }
 
 void reverse_in_place(int* arr, std::size_t n)
