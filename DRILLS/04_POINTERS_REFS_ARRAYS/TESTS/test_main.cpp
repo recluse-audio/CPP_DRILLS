@@ -46,7 +46,13 @@ void test_c_strlen()
 
 void test_reverse_in_place()
 {
-
+    int arr[5] = {10, 20, 30, 40, 50};
+    reverse_in_place(arr, 5);
+    assert(arr[0] == 50);
+    assert(arr[1] == 40);
+    assert(arr[2] == 30);
+    assert(arr[3] == 20);
+    assert(arr[4] == 10);
 }
 
 int main(int argc, char* argv[])

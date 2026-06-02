@@ -58,5 +58,18 @@ std::size_t c_strlen(const char* charString)
 
 void reverse_in_place(int* arr, std::size_t n)
 {
+    std::size_t half_n_plus_one = (n / 2) + 1;
 
+    for(std::size_t index = 0; index < half_n_plus_one; ++index)
+    {
+        int* currentLow = arr + index;
+        int* currentHigh = arr + (n - index - 1);
+
+        int currentLowVal = *currentLow;
+        int currentHighVal = *currentHigh;
+
+        *currentHigh = currentLowVal;
+        *currentLow = currentHighVal;
+
+    }
 }
