@@ -1,0 +1,108 @@
+# drills_ember_palette.csv - dark warm palette for the _DRILLS repos.
+# Background is a near-black warm brown; every accent sits in the orange, amber,
+# coral, and gold range so the whole frame reads orange while staying dark.
+# --- the text itself ---
+default-BG,#1B1310
+default-FG,#EBD6C0
+# --- org source/code blocks (subtle lift over default-BG) ---
+org-block-BG,#261A15
+org-verbatim-FG,#FFD08A
+org-code-FG,#F0A67A
+org-link-FG,#FFA14F
+# --- syntax highlighting ---
+font-lock-keyword-face-FG,#FF9E52
+font-lock-string-face-FG,#D3C070
+font-lock-comment-face-FG,#9C7C64
+font-lock-function-name-face-FG,#FFC46B
+font-lock-variable-name-face-FG,#F58C68
+font-lock-type-face-FG,#F0A79C
+font-lock-constant-face-FG,#FFDA96
+font-lock-builtin-face-FG,#FF7D4F
+font-lock-doc-face-FG,#9C7C64
+font-lock-warning-face-FG,#FF6F53
+font-lock-preprocessor-face-FG,#DDA46E
+font-lock-negation-char-face-FG,#F58C68
+# --- the cursor ---
+cursor-BG,#FF9E52
+# --- selection and search highlights ---
+region-BG,#4E2C1B
+highlight-BG,#3A241A
+secondary-selection-BG,#3A241A
+isearch-BG,#E8A05C
+isearch-FG,#1B1310
+lazy-highlight-BG,#3A241A
+lazy-highlight-FG,#EBD6C0
+match-BG,#3A241A
+show-paren-match-BG,#FF7D4F
+show-paren-match-FG,#1B1310
+# --- the modeline ---
+mode-line-BG,#3A241A
+mode-line-FG,#EBD6C0
+mode-line-inactive-BG,#1B1310
+mode-line-inactive-FG,#9C7C64
+header-line-BG,#1B1310
+header-line-FG,#9C7C64
+# --- the margins ---
+fringe-BG,#1B1310
+line-number-FG,#7A5A46
+line-number-current-line-FG,#EBD6C0
+vertical-border-FG,#3A241A
+# --- messages and prompts ---
+minibuffer-prompt-FG,#FF7D4F
+link-FG,#FFA14F
+error-FG,#FF6F53
+warning-FG,#FFB13D
+success-FG,#D3C070
+trailing-whitespace-BG,#FF6F53
+# --- SPC p f completion UI (Vertico + Orderless + Marginalia) ---
+vertico-current-BG,#43291D
+orderless-match-face-0-FG,#FFC46B
+orderless-match-face-1-FG,#F0A79C
+orderless-match-face-2-FG,#D3C070
+orderless-match-face-3-FG,#FFDA96
+marginalia-file-name-FG,#9C7C64
+marginalia-size-FG,#DDA46E
+marginalia-date-FG,#F0A67A
+marginalia-documentation-FG,#9C7C64
+# --- dirvish and dired ---
+dired-directory-FG,#FF9E52
+diredfl-dir-name-FG,#FF9E52
+diredfl-dir-heading-FG,#EBD6C0
+diredfl-file-name-FG,#FFC46B
+diredfl-file-suffix-FG,#9C7C64
+dirvish-hl-line-BG,#3A241A
+# --- solaire, the background Doom gives non-file buffers ---
+solaire-default-face-BG,#231813
+solaire-default-face-FG,#EBD6C0
+solaire-hl-line-face-BG,#3A241A
+solaire-fringe-face-BG,#231813
+solaire-line-number-face-BG,#231813
+solaire-header-line-face-BG,#231813
+solaire-mode-line-face-BG,#3A241A
+solaire-mode-line-inactive-face-BG,#231813
+# --- help buffers and the widgets they draw ---
+shadow-FG,#9C7C64
+button-FG,#FFA14F
+widget-button-FG,#FFA14F
+widget-button-pressed-FG,#FF7D4F
+widget-field-BG,#261A15
+widget-field-FG,#EBD6C0
+custom-button-BG,#3A241A
+custom-button-FG,#EBD6C0
+custom-button-mouse-BG,#4E2C1B
+custom-button-mouse-FG,#EBD6C0
+custom-button-pressed-BG,#4E2C1B
+custom-button-pressed-FG,#EBD6C0
+custom-variable-tag-FG,#DDA46E
+custom-group-tag-FG,#FF9E52
+custom-state-FG,#D3C070
+help-key-binding-BG,#3A241A
+help-key-binding-FG,#FFC46B
+help-argument-name-FG,#FF9E52
+# --- org list terms, stars, and the lines between windows ---
+org-list-dt-FG,#FFA14F
+org-hide-FG,#1B1310
+org-indent-FG,#1B1310
+window-divider-FG,#7A5A46
+window-divider-first-pixel-FG,#7A5A46
+window-divider-last-pixel-FG,#7A5A46
