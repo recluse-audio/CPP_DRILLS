@@ -1,0 +1,32 @@
+#+TITLE: 08_RESOURCE_LIFETIME
+#+DATE: 26-10-08
+#+STARTUP: overview
+
+* SPECIFICATION
+  The problem text RD wrote is in =ATTEMPT_1/README.org=. This drill adds copy and move to it.
+  - class =DynamicArray= in =SOURCE/DynamicArray.cpp= owns one heap-allocated =int= array
+  - =DynamicArray(int size)= allocates with =new int[size]()=. Every element starts at 0
+  - =~DynamicArray()= frees with =delete[]=
+  - =addElement(index, value)= stores a value. An index outside the array throws =std::out_of_range=
+  - =getElement(index)= returns a value. An index outside the array throws =std::out_of_range=
+  - =getSize()= returns the element count
+  - =printArray()= prints the elements on one line with one space between them
+  - the copy constructor and the copy assignment operator allocate a second array and copy every element
+  - the move constructor and the move assignment operator take the pointer. The source is left with size 0
+
+* DECISIONS
+  - =make test= builds with =-fsanitize=address=. A missing =delete[]= or a double =delete[]= fails the test run
+
+* SOURCE
+  - [[https://isocpp.org/images/uploads/3-Tour-Abstr.pdf][A Tour of C++ Part 2 Abstraction Mechanisms]]
+    section 3.3 Copy and Move
+  - [[https://isocpp.org/images/uploads/5-Tour-Util.pdf][A Tour of C++ Part 4 Concurrency and Utilities]]
+    section 5.2 Resource Management
+  - [[https://www.geeksforgeeks.org/cpp/destructor-for-dynamic-array-in-cpp/][GeeksforGeeks: Destructor for
+    Dynamic Array in C++]] named in =ATTEMPT_1/README.org=
+
+* TESTS
+  From =~/REPOS/_DRILLS/CPP_DRILLS/DRILLS/08_RESOURCE_LIFETIME/SOLUTION=:
+  #+begin_src sh
+  make test
+  #+end_src

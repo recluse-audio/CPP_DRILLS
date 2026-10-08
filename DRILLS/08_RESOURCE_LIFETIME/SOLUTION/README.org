@@ -1,0 +1,29 @@
+#+TITLE: 08_RESOURCE_LIFETIME SOLUTION
+#+DATE: 26-10-08
+#+STARTUP: overview
+
+* IMPLEMENT
+  1. =SOURCE/DynamicArray.h=: two private fields. =int* elements= and =int size=
+  2. constructor: =elements = new int[size]()=
+  3. destructor: =delete[] elements=
+  4. copy constructor: allocate =other.size= elements. One =for= copies each element
+  5. copy assignment: return early when =this == &other=. Allocate the new array first. =delete[]= the old
+     array. Store the new pointer and size
+  6. move constructor: take =other.elements= and =other.size=. Set =other.elements= to =nullptr= and
+     =other.size= to 0
+  7. move assignment: return early when =this == &other=. =delete[]= the old array. Take the pointer as the move
+     constructor does
+  8. =addElement()= and =getElement()=: =throw std::out_of_range= when =index < 0= or =index >= size=
+  9. =printArray()=: one =for= writes each element to =std::cout=
+
+* RUN
+  From =~/REPOS/_DRILLS/CPP_DRILLS/DRILLS/08_RESOURCE_LIFETIME/SOLUTION=:
+  #+begin_src sh
+  make
+  ./BUILD/resource_lifetime_build
+  #+end_src
+
+* TEST
+  #+begin_src sh
+  make test
+  #+end_src
