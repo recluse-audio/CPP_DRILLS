@@ -1,0 +1,24 @@
+#+TITLE: 10_CONTAINERS_AND_ALGORITHMS
+#+DATE: 26-10-08
+#+STARTUP: overview
+
+* SPECIFICATION
+  - =count_words(text)= in =SOURCE/WordCounter.cpp= splits the text on whitespace and returns a
+    =std::map<std::string, int>= from each word to its count
+  - =sort_words_by_count(counts)= returns a =std::vector<WordCount>= with the highest count first
+    - words with the same count are in dictionary order
+    - it sorts with =std::sort()= and the named function =compare_word_counts()=
+  - =check_word_listed(words, word)= returns =true= when =std::find()= locates the word in a
+    =std::vector<std::string>=
+  - =SOURCE/main.cpp= reads all of standard input and prints one line per word: the count then the word
+
+* SOURCE
+  - [[https://isocpp.org/images/uploads/4-Tour-Algo.pdf][A Tour of C++ Part 3 Containers and Algorithms]]
+    section 4.4 Containers. 4.4.1 vector and 4.4.3 map
+  - the same part section 4.5 Algorithms for =sort()= and =find()=
+
+* TESTS
+  From =~/REPOS/_DRILLS/CPP_DRILLS/DRILLS/10_CONTAINERS_AND_ALGORITHMS/SOLUTION=:
+  #+begin_src sh
+  make test
+  #+end_src
