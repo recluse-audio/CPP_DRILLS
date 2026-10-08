@@ -1,0 +1,26 @@
+#+TITLE: 04_WRITE_FILES SOLUTION
+#+DATE: 26-10-08
+#+STARTUP: overview
+
+* IMPLEMENT
+  1. =SOURCE/Record.h=: =struct Record= with a =std::string name= field and an =int number= field
+  2. =build_sample_records()=: =push_back()= the three records onto a =std::vector<Record>=
+  3. =write_text_file(records, path)=: open a =std::ofstream=. One =for= writes =name << ' ' << number << '\n'=
+  4. =write_csv_file(records, path)=: write =name,number\n= first. The same =for= with a =,= between the fields
+  5. =write_json_file(records, path)=: write =[\n=. One indexed =for= writes each object. Every object but the last
+     ends in =,=. Write =]= last
+  6. =SOURCE/write_files.cpp=: read =argv[1]= as the directory. Call the three write functions
+
+* RUN
+  From =~/REPOS/_DRILLS/CPP_DRILLS/DRILLS/04_WRITE_FILES/SOLUTION=:
+  #+begin_src sh
+  make
+  mkdir -p BUILD/output
+  ./BUILD/write_files_build BUILD/output
+  cat BUILD/output/records.json
+  #+end_src
+
+* TEST
+  #+begin_src sh
+  make test
+  #+end_src

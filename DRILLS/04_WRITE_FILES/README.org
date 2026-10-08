@@ -1,0 +1,27 @@
+#+TITLE: 04_WRITE_FILES
+#+DATE: 26-10-08
+#+STARTUP: overview
+
+* SPECIFICATION
+  - =SOURCE/write_files.cpp <dir>= writes three records into =<dir>=: =alice 3= and =bob 5= and =carol 8=
+  - each record is a name and an integer
+  - =records.txt= has one record per line. One space separates name and number
+  - =records.csv= has a =name,number= header row then one row per record. Lines end in =\n=
+  - =records.json= is an array of objects with keys =name= and =number= at an indent of 4 spaces
+  - it exits 0
+  - a missing =<dir>= argument prints a usage line to standard error and exits nonzero
+
+* DECISIONS
+  - the three files match byte for byte the files PYTHON_DRILLS/DRILLS/04_WRITE_FILES writes
+  - the Tour has no CSV section and no JSON section. =SOURCE/RecordWriter.cpp= writes both formats with =<<=
+
+* SOURCE
+  - [[https://isocpp.org/images/uploads/4-Tour-Algo.pdf][A Tour of C++ Part 3 Containers and Algorithms]]
+    section 4.5.3 Stream Iterators for =std::ofstream=
+  - the same part section 4.3.1 Output for =<<=
+
+* TESTS
+  From =~/REPOS/_DRILLS/CPP_DRILLS/DRILLS/04_WRITE_FILES/SOLUTION=:
+  #+begin_src sh
+  make test
+  #+end_src
