@@ -1,0 +1,25 @@
+#+TITLE: 02_LOOPS_AND_CONDITIONALS
+#+DATE: 26-10-08
+#+STARTUP: overview
+
+* SPECIFICATION
+  Three programs. Each prints to standard output and exits 0.
+  - =SOURCE/triangle.cpp= prints seven lines. Line n is n =#= characters
+  - =SOURCE/fizz_buzz.cpp= prints the numbers 1 to 100 one per line
+    - =Fizz= replaces a multiple of 3
+    - =Buzz= replaces a multiple of 5
+    - =FizzBuzz= replaces a multiple of both
+  - =SOURCE/chessboard.cpp= prints 8 lines of 8 characters that alternate a space and =#=
+    - line one starts on a space
+    - each line starts on the opposite character from the line above
+  - =SOURCE/LoopPrograms.cpp= has =write_triangle(output)= and =write_fizz_buzz(output)= and
+    =write_chessboard(output, size)=. Each program calls one of them with =std::cout=
+
+* SOURCE
+  - [[https://isocpp.org/images/uploads/2-Tour-Basics.pdf][A Tour of C++ Part 1 The Basics]] section 2.2.4 Tests and Loops
+
+* TESTS
+  From =~/REPOS/_DRILLS/CPP_DRILLS/DRILLS/02_LOOPS_AND_CONDITIONALS/SOLUTION=:
+  #+begin_src sh
+  make test
+  #+end_src

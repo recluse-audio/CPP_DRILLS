@@ -1,0 +1,24 @@
+#+TITLE: 02_LOOPS_AND_CONDITIONALS SOLUTION
+#+DATE: 26-10-08
+#+STARTUP: overview
+
+* IMPLEMENT
+  1. =SOURCE/LoopPrograms.h=: declare the three functions. Each takes =std::ostream& output=
+  2. =write_triangle()=: an outer =for= over line numbers 1 to 7. An inner =for= writes =#= that many times
+  3. =write_fizz_buzz()=: a =for= over 1 to 100. Test =number % 15= first then =% 3= then =% 5=
+  4. =write_chessboard()=: a =for= over rows and a =for= over columns. =(row + column) % 2 == 0= writes a space
+  5. =SOURCE/triangle.cpp= and =SOURCE/fizz_buzz.cpp= and =SOURCE/chessboard.cpp=: one =main()= each
+
+* RUN
+  From =~/REPOS/_DRILLS/CPP_DRILLS/DRILLS/02_LOOPS_AND_CONDITIONALS/SOLUTION=:
+  #+begin_src sh
+  make
+  ./BUILD/triangle_build
+  ./BUILD/fizz_buzz_build
+  ./BUILD/chessboard_build
+  #+end_src
+
+* TEST
+  #+begin_src sh
+  make test
+  #+end_src
