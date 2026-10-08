@@ -1,0 +1,17 @@
+#+TITLE: 01_HELLO_WORLD
+#+DATE: 26-10-08
+#+STARTUP: overview
+
+* SPECIFICATION
+  - =SOURCE/main.cpp= prints =Hello, world!= and a newline to standard output
+  - it exits 0
+  - =write_greeting(output)= in =SOURCE/Greeting.cpp= writes that line to the =std::ostream= it receives
+
+* SOURCE
+  - [[https://isocpp.org/images/uploads/2-Tour-Basics.pdf][A Tour of C++ Part 1 The Basics]] section 2.2.1 Hello, World!
+
+* TESTS
+  From =~/REPOS/_DRILLS/CPP_DRILLS/DRILLS/01_HELLO_WORLD/SOLUTION=:
+  #+begin_src sh
+  make test
+  #+end_src
