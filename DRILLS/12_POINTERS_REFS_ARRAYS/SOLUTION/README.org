@@ -1,0 +1,34 @@
+#+TITLE: 12_POINTERS_REFS_ARRAYS SOLUTION
+#+DATE: 26-10-08
+#+STARTUP: overview
+
+The specification is =../README.org=. It names five functions and asks for =nullptr= and empty-range tests.
+
+* IMPLEMENT
+  1. =swap_by_ref(a, b)=: copy =a= into a local. Assign =b= to =a=. Assign the local to =b=
+  2. =swap_by_ptr(a, b)=: return when either pointer is =nullptr=. Then the same three steps through =*a= and =*b=
+  3. =find(begin, end, target)=: return =nullptr= when either pointer is =nullptr=. One =for= moves a pointer
+     from =begin= up to =end=. Return the pointer when =*current == target=. Return =nullptr= after the loop
+  4. =c_strlen(s)=: return 0 for =nullptr=. One =while= counts until =s[length]= is ='\0'=
+  5. =reverse_in_place(arr, n)=: return when =arr= is =nullptr=. One pointer starts at =arr= and one at
+     =arr + n - 1=. Swap and step both inward while =left < right=
+
+* DECISIONS
+  - a =nullptr= argument makes =swap_by_ptr()= and =reverse_in_place()= do nothing
+  - a =nullptr= argument makes =find()= return =nullptr= and =c_strlen()= return 0
+
+* SOURCE
+  - [[https://isocpp.org/images/uploads/2-Tour-Basics.pdf][A Tour of C++ Part 1 The Basics]]
+    section 2.2.5 Pointers, Arrays, and Loops
+
+* RUN
+  From =~/REPOS/_DRILLS/CPP_DRILLS/DRILLS/12_POINTERS_REFS_ARRAYS/SOLUTION=:
+  #+begin_src sh
+  make
+  ./BUILD/buffer_processor_build
+  #+end_src
+
+* TEST
+  #+begin_src sh
+  make test
+  #+end_src
