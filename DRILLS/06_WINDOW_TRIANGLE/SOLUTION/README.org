@@ -1,0 +1,28 @@
+#+TITLE: 06_WINDOW_TRIANGLE SOLUTION
+#+DATE: 26-10-08
+#+STARTUP: overview
+
+* IMPLEMENT
+  1. =SOURCE/TrianglePoints.h=: =struct TrianglePoint= with =x= and =y=. =struct TrianglePoints= with =top= and
+     =bottom_left= and =bottom_right=
+  2. =calculate_triangle_points(width, height)=: fill the three corners from a margin of 20
+  3. =SOURCE/TriangleComponent.h=: =class TriangleComponent= derives from =juce::Component= and overrides =paint()=
+  4. the constructor calls =setSize(400, 300)=
+  5. =paint()=: =fillAll()= black. Build a =juce::Path= with =startNewSubPath()= then two =lineTo()= then
+     =closeSubPath()=. =setColour()= white then =fillPath()=
+  6. =SOURCE/Main.cpp=: a =juce::JUCEApplication= subclass. =initialise()= creates a =juce::DocumentWindow= subclass
+  7. the window constructor calls =setContentOwned()= with a new =TriangleComponent= then =setVisible(true)=
+  8. =closeButtonPressed()= calls =systemRequestedQuit()=. =START_JUCE_APPLICATION= names the application class
+  9. =CMakeLists.txt=: =add_subdirectory()= for =SUBMODULES/JUCE=. =juce_add_gui_app()=. Link =juce::juce_gui_basics=
+
+* RUN
+  From =~/REPOS/_DRILLS/CPP_DRILLS/DRILLS/06_WINDOW_TRIANGLE/SOLUTION=:
+  #+begin_src sh
+  make
+  ./BUILD/cmake/WindowTriangle_artefacts/WindowTriangle
+  #+end_src
+
+* TEST
+  #+begin_src sh
+  make test
+  #+end_src

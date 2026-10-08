@@ -1,0 +1,30 @@
+#+TITLE: 06_WINDOW_TRIANGLE
+#+DATE: 26-10-08
+#+STARTUP: overview
+
+* SPECIFICATION
+  - =SOURCE/Main.cpp= opens one desktop window of 400 by 300 pixels titled =WindowTriangle=
+  - the window shows one white filled triangle on a black background
+  - =calculate_triangle_points(width, height)= in =SOURCE/TrianglePoints.cpp= returns the three corners
+    - top: half the width across and 20 down
+    - bottom left: 20 across and 20 up from the bottom
+    - bottom right: 20 in from the right and 20 up from the bottom
+  - =TriangleComponent::paint()= in =SOURCE/TriangleComponent.cpp= fills a =juce::Path= through those corners
+  - closing the window ends the program
+
+* DECISIONS
+  - this drill builds with CMake against =SUBMODULES/JUCE=. =make= wraps the two =cmake= commands
+  - =SOURCE/TrianglePoints.cpp= includes no JUCE header. The Catch2 test builds with =g++= alone
+  - the window itself is checked by eye
+
+* SOURCE
+  - [[https://docs.juce.com/master/classDocumentWindow.html][JUCE DocumentWindow]]
+  - [[https://docs.juce.com/master/classPath.html][JUCE Path]]
+  - [[https://docs.juce.com/master/classComponent.html][JUCE Component]] for =paint()=
+  - =SUBMODULES/JUCE/examples/CMake/GuiApp/= for =juce_add_gui_app= and =START_JUCE_APPLICATION=
+
+* TESTS
+  From =~/REPOS/_DRILLS/CPP_DRILLS/DRILLS/06_WINDOW_TRIANGLE/SOLUTION=:
+  #+begin_src sh
+  make test
+  #+end_src
