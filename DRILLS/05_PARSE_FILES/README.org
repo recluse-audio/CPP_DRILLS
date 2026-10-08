@@ -1,0 +1,27 @@
+#+TITLE: 05_PARSE_FILES
+#+DATE: 26-10-08
+#+STARTUP: overview
+
+* SPECIFICATION
+  - =SOURCE/parse_files.cpp <dir>= reads =records.txt= and =records.csv= and =records.json= from =<dir>=
+  - those are the three formats 04_WRITE_FILES writes
+  - it builds a list of name and integer number records from each file
+  - it prints one line per record per file: file name then name then number. Example: =records.txt alice 3=
+  - it exits 0 when the three record lists match
+  - when the lists differ it prints one line starting =error: = to standard error and exits nonzero
+
+* DECISIONS
+  - the Tour has no CSV section and no JSON section. =SOURCE/RecordParser.cpp= reads both with =std::string::find()=
+  - =parse_json_file()= reads the array of flat objects 04_WRITE_FILES writes. Other JSON layouts are out of scope
+
+* SOURCE
+  - [[https://isocpp.org/images/uploads/4-Tour-Algo.pdf][A Tour of C++ Part 3 Containers and Algorithms]]
+    section 4.5.3 Stream Iterators for =std::ifstream=
+  - the same part section 4.2 Strings for =find()= and =substr()=
+  - the same part section 4.3.2 Input for =>>= and =getline()=
+
+* TESTS
+  From =~/REPOS/_DRILLS/CPP_DRILLS/DRILLS/05_PARSE_FILES/SOLUTION=:
+  #+begin_src sh
+  make test
+  #+end_src

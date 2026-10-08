@@ -1,0 +1,31 @@
+#+TITLE: 05_PARSE_FILES SOLUTION
+#+DATE: 26-10-08
+#+STARTUP: overview
+
+* IMPLEMENT
+  1. =SOURCE/Record.h=: the =struct Record= of drill 04
+  2. =parse_text_file(path)=: =while (input >> name >> number)= pushes one =Record= per line
+  3. =parse_csv_file(path)=: one =getline()= drops the header. For each later line =find(',')= splits name from
+     number. =std::stoi()= converts the number
+  4. =parse_json_file(path)=: read the whole file into one =std::string=. Loop on =find("\"name\"", position)=
+  5. inside the loop: the name sits between the next two ="= after the =:=. The number follows the =:= after
+     ="number"=. =std::stoi()= skips the space and stops at the line end
+  6. =compare_records(first, second)=: =false= on a size difference or on the first differing field
+  7. =write_records(output, file_name, records)=: one line per record
+  8. =SOURCE/parse_files.cpp=: parse the three files. Write each list. Compare text against CSV and against JSON
+
+* RUN
+  From =~/REPOS/_DRILLS/CPP_DRILLS/DRILLS=:
+  #+begin_src sh
+  make -C 04_WRITE_FILES/SOLUTION
+  make -C 05_PARSE_FILES/SOLUTION
+  mkdir -p 05_PARSE_FILES/SOLUTION/BUILD/records
+  04_WRITE_FILES/SOLUTION/BUILD/write_files_build 05_PARSE_FILES/SOLUTION/BUILD/records
+  05_PARSE_FILES/SOLUTION/BUILD/parse_files_build 05_PARSE_FILES/SOLUTION/BUILD/records
+  #+end_src
+
+* TEST
+  From =~/REPOS/_DRILLS/CPP_DRILLS/DRILLS/05_PARSE_FILES/SOLUTION=:
+  #+begin_src sh
+  make test
+  #+end_src
