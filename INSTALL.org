@@ -1,0 +1,29 @@
+#+TITLE: CPP_DRILLS Install and Setup
+#+AUTHOR: Ryan Devens
+#+OPTIONS: toc:nil
+
+* Declarations
+  - =SUBMODULES/Catch2= is the Catch2 git submodule at tag v3.9.1. Every drill test includes it
+  - =SUBMODULES/JUCE= is the JUCE git submodule at tag 9.0.3. Drills 06 and 07 build against it
+  - =check_dependencies.sh= is =DRILLS/00_INSTALL/SOLUTION/SOURCE/check_dependencies.sh=
+
+* INSTALL
+** DEPENDENCIES
+   - ~g++~ and ~make~ from the machine. Every drill Makefile calls both
+   - ~cmake~ from the machine. Drills 06 and 07 call it
+   - the JUCE Linux packages listed in =SUBMODULES/JUCE/docs/Linux Dependencies.md= line 69 and below
+
+** STEPS
+   From =~/REPOS/_DRILLS/CPP_DRILLS=:
+   1. Download both submodules at their pinned commits
+      #+begin_src sh
+      git submodule update --init --depth 1
+      #+end_src
+   2. Check the tools and the two submodule tags
+      #+begin_src sh
+      bash DRILLS/00_INSTALL/SOLUTION/SOURCE/check_dependencies.sh .
+      #+end_src
+   3. Run the 00_INSTALL tests
+      #+begin_src sh
+      make -C DRILLS/00_INSTALL/SOLUTION test
+      #+end_src
