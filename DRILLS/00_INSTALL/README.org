@@ -1,0 +1,30 @@
+#+TITLE: 00_INSTALL
+#+DATE: 26-10-08
+#+STARTUP: overview
+
+* SPECIFICATION
+  - =g++= and =make= and =cmake= are on =PATH=
+  - =SUBMODULES/Catch2= is a git submodule checked out at tag =v3.9.1=
+  - =SUBMODULES/JUCE= is a git submodule checked out at tag =9.0.3=
+  - =SOURCE/check_dependencies.sh <repo dir>= checks each of those five pieces
+  - it prints one line per missing piece
+  - it exits nonzero when any piece is missing
+
+* DECISIONS
+  - the versions on the machine that wrote the solutions: g++ 15.2.0 and cmake 4.2.3
+  - =check_dependencies.sh= checks that each tool exists. It compares the two submodule tags exactly
+  - every drill Makefile compiles =SUBMODULES/Catch2/extras/catch_amalgamated.cpp= once into its own =BUILD/=
+  - =DRILLS/.gitignore= ignores =SOLUTION/BUILD/=
+  - drills 06 and 07 build with CMake against =SUBMODULES/JUCE=. Every other drill builds with =make= and =g++=
+
+* SOURCE
+  - [[https://github.com/catchorg/Catch2/blob/devel/docs/tutorial.md][Catch2 tutorial]]
+  - [[https://github.com/catchorg/Catch2/blob/devel/docs/migrate-v2-to-v3.md][Catch2 v3 amalgamated files]]
+  - [[https://github.com/juce-framework/JUCE/blob/master/docs/CMake%20API.md][JUCE CMake API]]
+  - [[https://git-scm.com/book/en/v2/Git-Tools-Submodules][Pro Git: Submodules]]
+
+* TESTS
+  From =~/REPOS/_DRILLS/CPP_DRILLS/DRILLS/00_INSTALL/SOLUTION=:
+  #+begin_src sh
+  make test
+  #+end_src
