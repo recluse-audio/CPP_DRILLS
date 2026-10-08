@@ -1,0 +1,37 @@
+#+TITLE: 07_WAVETABLE
+#+DATE: 26-10-08
+#+STARTUP: overview
+
+* SPECIFICATION
+  - =calculate_sine_table(table_size)= in =SOURCE/Wavetable.cpp= returns one sine cycle
+    - sample n is =sin(2 * pi * n / table_size)=
+    - it is written as a loop
+  - =write_table_csv(table, csv_path)= writes an =index,sample= header row then one row per sample as
+    04_WRITE_FILES does
+  - class =Wavetable=: =Wavetable(csv_path)= parses the .csv back into its =samples= field as 05_PARSE_FILES does
+  - =read_next_samples(frequency, sample_rate, sample_count)= steps a =phase= field by
+    =frequency * table size / sample_rate= per sample
+    - it reads between two samples with linear interpolation
+    - it wraps from the last sample to sample 0
+    - it keeps =phase= for the next call
+  - =SOURCE/PlayWavetable.cpp= writes a 512 sample table and parses it with =Wavetable=
+  - it plays 440 Hz for two seconds on the default output device through a =juce::AudioIODeviceCallback=
+
+* DECISIONS
+  - =write_table_csv()= writes each sample with 17 significant digits. The parsed =double= equals the written one
+  - =SOURCE/Wavetable.cpp= includes no JUCE header. The Catch2 test builds with =g++= alone
+  - =PlayWavetable.cpp= writes =BUILD/sine_table.csv= relative to the working directory
+  - playback is checked by ear
+
+* SOURCE
+  - [[https://isocpp.org/images/uploads/2-Tour-Basics.pdf][A Tour of C++ Part 1 The Basics]] section 2.3.2 Classes
+  - [[https://docs.juce.com/master/classAudioIODeviceCallback.html][JUCE AudioIODeviceCallback]]
+  - [[https://docs.juce.com/master/classAudioDeviceManager.html][JUCE AudioDeviceManager]]
+  - =SUBMODULES/JUCE/examples/CMake/ConsoleApp/= for =juce_add_console_app=
+  - the chain is set in DRILLS_CMD/DRILL_MATRIX.org lines 75 to 77
+
+* TESTS
+  From =~/REPOS/_DRILLS/CPP_DRILLS/DRILLS/07_WAVETABLE/SOLUTION=:
+  #+begin_src sh
+  make test
+  #+end_src

@@ -1,0 +1,32 @@
+#+TITLE: 07_WAVETABLE SOLUTION
+#+DATE: 26-10-08
+#+STARTUP: overview
+
+* IMPLEMENT
+  1. =calculate_sine_table(table_size)=: a =for= over the indices. =std::sin(2.0 * pi * index / table_size)=.
+     =push_back()= each sample
+  2. =write_table_csv(table, csv_path)=: a =std::ofstream=. =std::setprecision(17)=. The header row =index,sample=
+     then one row per sample
+  3. =Wavetable::Wavetable(csv_path)=: set =phase= to 0.0. One =getline()= drops the header. For each later line
+     =find(',')= then =std::stod()= on the text after it
+  4. =read_next_samples()=: the increment is =frequency * samples.size() / sample_rate=
+  5. per sample: =lower_index= is =phase= cast to an integer. =upper_index= is =(lower_index + 1) % size=.
+     Interpolate by =phase - lower_index=. Add the increment to =phase=. Subtract the table size when =phase=
+     reaches it
+  6. =SOURCE/WavetableCallback.cpp=: =audioDeviceAboutToStart()= stores the device sample rate.
+     =audioDeviceIOCallbackWithContext()= copies =read_next_samples()= times 0.2 into every output channel
+  7. =SOURCE/PlayWavetable.cpp=: write the table. Parse it. =initialiseWithDefaultDevices(0, 2)=.
+     =addAudioCallback()=. =juce::Thread::sleep(2000)=. =removeAudioCallback()=
+  8. =CMakeLists.txt=: =juce_add_console_app()=. Link =juce::juce_audio_devices=
+
+* RUN
+  From =~/REPOS/_DRILLS/CPP_DRILLS/DRILLS/07_WAVETABLE/SOLUTION=. It plays 440 Hz for two seconds:
+  #+begin_src sh
+  make
+  ./BUILD/cmake/PlayWavetable_artefacts/PlayWavetable
+  #+end_src
+
+* TEST
+  #+begin_src sh
+  make test
+  #+end_src
