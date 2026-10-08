@@ -1,0 +1,27 @@
+#+TITLE: 11_THREADS SOLUTION
+#+DATE: 26-10-08
+#+STARTUP: overview
+
+* IMPLEMENT
+  1. =sum_in_one_thread()=: one range =for= adds each value to a =long long=
+  2. =add_range_to_total(values, begin, end, total, total_mutex)=: one =for= from =begin= to =end= fills a
+     local sum. Then a =std::lock_guard<std::mutex>= guards =total = total + local_sum=
+  3. =sum_in_threads()=: throw when =thread_count < 1=. The range size is =values.size() / thread_count=
+  4. one =for= per thread: compute =begin= and =end=. The last thread ends at =values.size()=
+  5. =std::cref(values)= and =std::ref(total)= and =std::ref(total_mutex)= go into named variables.
+     =std::thread= copies its arguments and a reference needs the wrapper
+  6. =threads.emplace_back(add_range_to_total, ...)= starts each thread inside the =std::vector<std::thread>=
+  7. a second =for= calls =join()= on every thread
+  8. the Makefile passes =-pthread=
+
+* RUN
+  From =~/REPOS/_DRILLS/CPP_DRILLS/DRILLS/11_THREADS/SOLUTION=:
+  #+begin_src sh
+  make
+  ./BUILD/thread_sum_build
+  #+end_src
+
+* TEST
+  #+begin_src sh
+  make test
+  #+end_src

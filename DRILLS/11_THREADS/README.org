@@ -1,0 +1,27 @@
+#+TITLE: 11_THREADS
+#+DATE: 26-10-08
+#+STARTUP: overview
+
+* SPECIFICATION
+  - =sum_in_one_thread(values)= in =SOURCE/ThreadSum.cpp= adds every =int= of a =std::vector<int>= in one loop
+  - =sum_in_threads(values, thread_count)= returns the same total from =thread_count= threads
+    - it splits the vector into =thread_count= ranges. The last range takes the remainder
+    - each =std::thread= runs =add_range_to_total()= on one range
+    - each thread adds its range into a local sum then adds that sum to the shared total under a =std::mutex=
+    - it joins every thread before it returns
+    - a =thread_count= below 1 throws =std::invalid_argument=
+  - =SOURCE/main.cpp= sums 1 to 1000000 both ways and prints both totals
+
+* DECISIONS
+  - =make test= builds with =-fsanitize=thread=. A write to the shared total outside the =std::mutex= fails the
+    test run
+
+* SOURCE
+  - [[https://isocpp.org/images/uploads/5-Tour-Util.pdf][A Tour of C++ Part 4 Concurrency and Utilities]]
+    section 5.3 Concurrency. 5.3.1 Tasks and threads and 5.3.2 Passing Arguments and 5.3.4 Sharing Data
+
+* TESTS
+  From =~/REPOS/_DRILLS/CPP_DRILLS/DRILLS/11_THREADS/SOLUTION=:
+  #+begin_src sh
+  make test
+  #+end_src
