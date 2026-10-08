@@ -1,0 +1,51 @@
+#+TITLE: HISTORY
+#+DATE: 26-10-08
+#+STARTUP: overview
+
+* Origin
+  - Bjarne Stroustrup started work on what became C++ in 1979
+    [[https://www.stroustrup.com/bs_faq.html][Stroustrup FAQ: When was C++ invented?]].
+  - The initial version was called C with Classes
+    [[https://www.stroustrup.com/bs_faq.html][Stroustrup FAQ: When was C++ invented?]].
+  - The first version of C++ was used internally in AT&T in August 1983
+    [[https://www.stroustrup.com/bs_faq.html][Stroustrup FAQ: When was C++ invented?]].
+  - The first commercial implementation was released in October 1985
+    [[https://www.stroustrup.com/bs_faq.html][Stroustrup FAQ: When was C++ invented?]].
+
+* Design goals
+  - Stroustrup wanted to write efficient systems programs in the styles encouraged by Simula67
+    [[https://www.stroustrup.com/bs_faq.html][Stroustrup FAQ: Why did you invent C++?]].
+  - The tasks that started the design had to do with distributing operating system facilities across a network
+    [[https://www.stroustrup.com/bs_faq.html][Stroustrup FAQ: Why did you invent C++?]].
+
+* Versions
+  - C++98 is ISO/IEC 14882:1998
+    [[https://en.cppreference.com/w/cpp/language/history][cppreference: History of C++]].
+  - C++03 is ISO/IEC 14882:2003
+    [[https://en.cppreference.com/w/cpp/language/history][cppreference: History of C++]].
+  - C++11 is ISO/IEC 14882:2011
+    [[https://en.cppreference.com/w/cpp/language/history][cppreference: History of C++]].
+  - C++14 is ISO/IEC 14882:2014
+    [[https://en.cppreference.com/w/cpp/language/history][cppreference: History of C++]].
+  - C++17 is ISO/IEC 14882:2017
+    [[https://en.cppreference.com/w/cpp/language/history][cppreference: History of C++]].
+  - Every drill Makefile in this repo compiles with =-std=c++17=
+    [[file:~/REPOS/_DRILLS/CPP_DRILLS/DRILLS/01_HELLO_WORLD/SOLUTION/Makefile][01_HELLO_WORLD/SOLUTION/Makefile]].
+
+* Where it is used today
+  - GUI and graphics: JUCE is an open source C++ application development framework
+    [[https://juce.com/][juce.com]].
+  - GUI and graphics: drill 06 opens a JUCE window and draws a triangle
+    [[file:~/REPOS/_DRILLS/CPP_DRILLS/DRILLS/06_WINDOW_TRIANGLE/README.org][06_WINDOW_TRIANGLE/README.org]].
+  - Audio: JUCE builds applications and plug-ins
+    [[https://juce.com/][juce.com]].
+  - Audio: drill 07 plays a wavetable through a JUCE audio callback
+    [[file:~/REPOS/_DRILLS/CPP_DRILLS/DRILLS/07_WAVETABLE/README.org][07_WAVETABLE/README.org]].
+  - Resource lifetime: drill 08 shows copy and move and the destructor
+    [[file:~/REPOS/_DRILLS/CPP_DRILLS/DRILLS/08_RESOURCE_LIFETIME/README.org][08_RESOURCE_LIFETIME/README.org]].
+  - Generic code: drill 09 shows a class template and a function template
+    [[file:~/REPOS/_DRILLS/CPP_DRILLS/DRILLS/09_TEMPLATES/README.org][09_TEMPLATES/README.org]].
+  - The standard library: drill 10 shows =std::vector= and =std::map= with =std::sort()= and =std::find()=
+    [[file:~/REPOS/_DRILLS/CPP_DRILLS/DRILLS/10_CONTAINERS_AND_ALGORITHMS/README.org][10_CONTAINERS_AND_ALGORITHMS/README.org]].
+  - Threads: drill 11 shows =std::thread= and =std::mutex=
+    [[file:~/REPOS/_DRILLS/CPP_DRILLS/DRILLS/11_THREADS/README.org][11_THREADS/README.org]].
