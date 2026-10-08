@@ -1,0 +1,26 @@
+#+TITLE: 03_USER_INPUT SOLUTION
+#+DATE: 26-10-08
+#+STARTUP: overview
+
+* IMPLEMENT
+  1. =reverse_line()=: a =for= from the last index down to 0. =push_back()= each character onto a new string
+  2. =calculate_line()=: build a =std::istringstream= from the line. Extract a =double= then a =char= then a =double=
+  3. a failed extraction throws =std::invalid_argument=. A fourth token throws =std::invalid_argument=
+  4. =/= with a right operand of 0 throws =std::domain_error=
+  5. one =if= per operator returns the result. An unknown operator throws =std::invalid_argument=
+  6. =SOURCE/string_reverse.cpp=: =std::getline(std::cin, line)= then print =reverse_line(line)=
+  7. =SOURCE/string_calculator.cpp=: =try= the call. =catch (const std::exception& error)= prints =error.what()= to
+     =std::cerr= and returns 1
+
+* RUN
+  From =~/REPOS/_DRILLS/CPP_DRILLS/DRILLS/03_USER_INPUT/SOLUTION=:
+  #+begin_src sh
+  make
+  echo "hello" | ./BUILD/string_reverse_build
+  echo "7 / 2" | ./BUILD/string_calculator_build
+  #+end_src
+
+* TEST
+  #+begin_src sh
+  make test
+  #+end_src

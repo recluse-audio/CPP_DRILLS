@@ -1,0 +1,26 @@
+#+TITLE: 03_USER_INPUT
+#+DATE: 26-10-08
+#+STARTUP: overview
+
+* SPECIFICATION
+  Two programs. Each reads one line from standard input.
+  - =SOURCE/string_reverse.cpp= prints the line reversed and exits 0
+  - =SOURCE/string_calculator.cpp= reads a line of the form =<number> <operator> <number>=
+    - the operator is one of =+ - * /=
+    - it prints the result and exits 0
+    - malformed input prints an error to standard error and exits nonzero
+    - division by zero prints an error to standard error and exits nonzero
+  - =SOURCE/LineTools.cpp= has =reverse_line(line)= and =calculate_line(line)=
+    - =calculate_line()= throws =std::invalid_argument= for malformed input
+    - =calculate_line()= throws =std::domain_error= for division by zero
+
+* SOURCE
+  - [[https://isocpp.org/images/uploads/4-Tour-Algo.pdf][A Tour of C++ Part 3 Containers and Algorithms]] section 4.2 Strings
+  - the same part section 4.3.2 Input for =getline()=
+  - [[https://isocpp.org/images/uploads/2-Tour-Basics.pdf][A Tour of C++ Part 1 The Basics]] section 2.4.3 Error Handling
+
+* TESTS
+  From =~/REPOS/_DRILLS/CPP_DRILLS/DRILLS/03_USER_INPUT/SOLUTION=:
+  #+begin_src sh
+  make test
+  #+end_src
