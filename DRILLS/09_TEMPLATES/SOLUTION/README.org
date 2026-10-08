@@ -1,0 +1,26 @@
+#+TITLE: 09_TEMPLATES SOLUTION
+#+DATE: 26-10-08
+#+STARTUP: overview
+
+* IMPLEMENT
+  1. =SOURCE/Stack.h=: =template<typename T> class Stack= with one private =std::vector<T> elements= field
+  2. every member function is defined in the header. A template is compiled where it is used
+  3. =push()=: =elements.push_back(value)=
+  4. =pop()=: throw when =elements.empty()=. Copy =elements.back()= into a local. =elements.pop_back()=. Return
+     the local
+  5. =peek()=: throw when =elements.empty()=. Return =elements.back()=
+  6. =find_largest()=: throw when the vector is empty. Start with element 0. One =for= replaces the largest when
+     =largest < values[index]=
+  7. =SOURCE/main.cpp=: one =Stack<int>= and one =Stack<std::string>=
+
+* RUN
+  From =~/REPOS/_DRILLS/CPP_DRILLS/DRILLS/09_TEMPLATES/SOLUTION=:
+  #+begin_src sh
+  make
+  ./BUILD/templates_build
+  #+end_src
+
+* TEST
+  #+begin_src sh
+  make test
+  #+end_src

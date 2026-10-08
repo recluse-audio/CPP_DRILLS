@@ -1,0 +1,24 @@
+#+TITLE: 09_TEMPLATES
+#+DATE: 26-10-08
+#+STARTUP: overview
+
+* SPECIFICATION
+  - class template =Stack<T>= in =SOURCE/Stack.h= stores elements of one type
+    - =push(value)= adds an element
+    - =pop()= removes the newest element and returns it. An empty stack throws =std::out_of_range=
+    - =peek()= returns the newest element and leaves it in place. An empty stack throws =std::out_of_range=
+    - =count_elements()= returns the element count
+  - function template =find_largest(values)= in =SOURCE/Stack.h= returns the largest element of a
+    =std::vector<T>=. It compares with =<=. An empty vector throws =std::invalid_argument=
+  - both templates work for =int= and for =std::string=
+  - =SOURCE/main.cpp= pushes three =int= values and three =std::string= values and prints each pop
+
+* SOURCE
+  - [[https://isocpp.org/images/uploads/3-Tour-Abstr.pdf][A Tour of C++ Part 2 Abstraction Mechanisms]]
+    section 3.4 Templates. 3.4.1 Parameterized Types and 3.4.2 Function Templates
+
+* TESTS
+  From =~/REPOS/_DRILLS/CPP_DRILLS/DRILLS/09_TEMPLATES/SOLUTION=:
+  #+begin_src sh
+  make test
+  #+end_src
