@@ -1,0 +1,5 @@
+#+TITLE: README
+#+AUTHOR: Ryan Devens
+#+DATE: 2026-10-06 18:16
+#+OPTIONS: toc:nil num:nil
+#+SUMMARY: Basic input/logic using cpp in cli
